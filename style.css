@@ -1,0 +1,136 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+body {
+	background-color: rgba(0, 0, 0, 0.8);
+	padding-bottom: 2000px;
+}
+nav {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+	padding: 20px 0;
+	background-color: black;
+	box-shadow: 3px 0 4px grey;
+	top: 0;
+	position: fixed;
+}
+nav .logo {
+	color: white;
+}
+nav ul {
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	width: 20%;
+
+}
+nav ul li a {
+	text-decoration: none;
+	color: white;
+	padding: 10px 9px;
+	border-radius: 20px;
+	transition-duration: .3s;
+}
+nav ul li a:hover {
+	background-color: white;
+	color: black;
+}
+.container {
+	width: 100%;
+	height: 500px;
+	margin-top: 18rem;
+}
+.container .card {
+	display: flex;
+	justify-content: space-around;
+
+}
+.container .card .satu {
+	width: 270px;
+	height: 350px;
+	background-color: rgba(255, 255, 255, 0.3);
+	border-radius: 10px;
+	box-shadow: 3px 2px 4px rgba(255, 255, 255, 0.2)
+}
+.container .card .satu h2 {
+	margin-top: 20px;
+	text-align: center;
+}
+.container .card .dua {
+	width: 270px;
+	height: 350px;
+	background-color: rgba(255, 255, 255, 0.3);
+	border-radius: 10px;
+	box-shadow: 3px 2px 4px rgba(255, 255, 255, 0.2)
+}
+.container .card .dua h2 {
+	margin-top: 20px;
+	text-align: center;
+}
+.container .card .tiga {
+	width: 270px;
+	height: 350px;
+	background-color: rgba(255, 255, 255, 0.3);
+	border-radius: 10px;
+	box-shadow: 3px 2px 4px rgba(255, 255, 255, 0.2)
+}
+.container .card .tiga h2 {
+	margin-top: 20px;
+	text-align: center;
+}
+
+@media screen and (max-width: 756px) {
+	nav ul {
+		width: 50%;
+	}
+}
+@media screen and (max-width: 576px) {
+	nav ul {
+		display: none;
+	}
+	nav .logo {
+		left: 0;
+	}
+	.container .card {
+		display: block;
+		margin-left: 150px;
+
+	}
+	.container .card .satu {
+		height: 270px
+	}
+	.container .card .dua {
+		margin-top: 15px;
+		height: 270px
+	}
+	.container .card .tiga {
+		margin-top: 15px;
+		height: 270px
+	}
+}
+@media screen and (max-width: 414px) {
+	.container .card {
+		display: block;
+		margin-left: 72px;
+
+	}
+	.container {
+		margin-top: 9rem;
+	}
+}
+@media screen and (max-width: 375px) {
+	.container .card {
+		display: block;
+		margin-left: 54px;
+
+	}
+}
+@media screen and (max-width: 360px) {
+	.container .card {
+		display: block;
+		margin-left: 45px;
+
+	}
+}
