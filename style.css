@@ -3,8 +3,8 @@
 	margin: 0;
 }
 body {
-	background-color: rgba(0, 0, 0, 0.8);
-	padding-bottom: 2000px;
+	background-color: rgba(0, 0, 0, 0.9);
+	padding-bottom: 500px;
 }
 nav {
 	display: flex;
@@ -18,6 +18,7 @@ nav {
 }
 nav .logo {
 	color: white;
+	z-index: -1;
 }
 nav ul {
 	list-style: none;
@@ -37,6 +38,49 @@ nav ul li a:hover {
 	background-color: white;
 	color: black;
 }
+.menu{
+	display: none;
+	flex-direction: column;
+	height: 20px;
+	justify-content: space-between;
+	position: relative;
+}
+.menu input{
+	position: absolute;
+	height: 28px;
+	width: 40px;
+	opacity: 0;
+	left: -5px;
+	top: -3px;
+	cursor: pointer;
+}
+.menu span{
+	display: block;
+	width: 25px;
+	height: 3px;
+	background-color: #FF8C00;
+	border: 3px;
+	transition: all 0.5s;
+}
+/* membuat animasi menu*/
+.menu span:nth-child(2){
+	transform-origin: 0 0;
+}
+.menu span:nth-child(4){
+	transform-origin: 0 100%;
+}
+.menu input:checked ~ span:nth-child(2){
+	background-color: red;
+	transform: rotate(45deg);
+}
+.menu input:checked ~ span:nth-child(4){
+	background-color: red;
+	transform: rotate(-45deg);
+}
+.menu input:checked ~ span:nth-child(3){
+	transform:scale(0);
+	opacity: 0;
+}
 .container {
 	width: 100%;
 	height: 500px;
@@ -50,7 +94,7 @@ nav ul li a:hover {
 .container .card .satu {
 	width: 270px;
 	height: 350px;
-	background-color: rgba(255, 255, 255, 0.3);
+	background-color: rgba(255, 255, 255, 0.4);
 	border-radius: 10px;
 	box-shadow: 3px 2px 4px rgba(255, 255, 255, 0.2)
 }
@@ -61,7 +105,7 @@ nav ul li a:hover {
 .container .card .dua {
 	width: 270px;
 	height: 350px;
-	background-color: rgba(255, 255, 255, 0.3);
+	background-color: rgba(255, 255, 255, 0.4);
 	border-radius: 10px;
 	box-shadow: 3px 2px 4px rgba(255, 255, 255, 0.2)
 }
@@ -72,7 +116,7 @@ nav ul li a:hover {
 .container .card .tiga {
 	width: 270px;
 	height: 350px;
-	background-color: rgba(255, 255, 255, 0.3);
+	background-color: rgba(255, 255, 255, 0.4);
 	border-radius: 10px;
 	box-shadow: 3px 2px 4px rgba(255, 255, 255, 0.2)
 }
@@ -87,8 +131,28 @@ nav ul li a:hover {
 	}
 }
 @media screen and (max-width: 576px) {
-	nav ul {
-		display: none;
+	nav ul{
+		position: absolute;
+		right: 0;
+		justify-content: space-evenly;
+		height: 60vh;
+		width: 90%;
+		top: 0;
+		align-items: center;
+		flex-direction: column;
+		background-color: black;
+		z-index: -1;
+		transform: translateX(100%);
+		transition: all 1s;
+		opacity: 0;
+	}
+	.menu{
+		display: flex;
+		z-index: 2;
+	}
+	nav ul.slide{
+		opacity: 1;
+		transform: translateX(0);
 	}
 	nav .logo {
 		left: 0;
@@ -118,6 +182,13 @@ nav ul li a:hover {
 	}
 	.container {
 		margin-top: 9rem;
+	}
+}
+@media screen and (max-width: 390px) {
+	.container .card {
+		display: block;
+		margin-left: 59px;
+
 	}
 }
 @media screen and (max-width: 375px) {
